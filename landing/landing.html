@@ -1,0 +1,26 @@
+<section class="landingContainer">
+  <section class="profileHeader">
+    <div class="leftProfileColumn">
+      <img ng-src="{{userLanding.headShot}}">
+    </div>
+    <div class="rightProfileColumn">
+      <h1>{{userLanding.firstName + ' ' + userLanding.lastName}}</h1>
+      <p> Age: {{userLanding.age}} </p>
+      <p>Gender: {{userLanding.gender}}</p>
+      <p> City: {{userLanding.city}} </p>
+      <p>State: {{userLanding.state}}</p>
+    </div>
+  </section>
+
+  <section class="commentContainer">
+    <form ng-submit="addComment(userLanding.id, newComment)">
+      <input class="newComment" type="text" placeholder="Write a comment..." ng-model="newComment">
+    </form>
+  </section>
+
+  <section class="commentThread">
+    <p class="singleComment" ng-repeat="comment in userLanding.comments">
+      {{comment}}
+    </p>
+  </section>
+</section>

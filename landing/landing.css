@@ -1,0 +1,60 @@
+.rightProfileColumn {
+  margin-left: 35px;
+}
+
+.leftProfileColumn img {
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+}
+
+.profileHeader {
+  background: #51aae8;
+  width: 50%;
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  display: flex;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.rightProfileColumn h1 {
+  font-size: 32px;
+  line-height: 0;
+}
+
+.rightProfileColumn p {
+  font-size: 18px;
+  line-height: 5px;
+}
+
+.commentContainer {
+  background: #51aae8;
+  width: 50%;
+  color: white;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  padding: 20px;
+  margin: auto;
+  margin-top: 30px;
+}
+
+.newComment {
+  height: 40px;
+  width: 100%;
+  padding-left: 15px;
+}
+
+.commentThread {
+  background: white;
+  width: 50%;
+  color: #51aae8;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: 3px solid #51aae8;
+  padding: 20px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
