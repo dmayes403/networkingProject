@@ -66,6 +66,7 @@ body {
 
 .loginRequestContainer a {
   color: white;
+  /*text-decoration: none;*/
 }
 
 .login {
@@ -116,4 +117,5 @@ body {
   margin: auto;
   margin-top: 5px;
   padding-top: 3px;
+  text-decoration: none;
 }

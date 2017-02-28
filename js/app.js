@@ -7,7 +7,8 @@ angular.module('networkingApp', ['ui.router'])
             controller: 'loginCtrl'
           })
           .state('logout',{
-            url:'/',
+            url:'/login',
+            templateUrl: '../login/login.html',
             // templateUrl: 'index.html',
           })
           .state('signup',{
@@ -19,6 +20,11 @@ angular.module('networkingApp', ['ui.router'])
             url:'/landing/:id',
             templateUrl: '../landing/landing.html',
             controller: 'landingCtrl'
+          })
+          .state('friendsLibrary',{
+            url:'/friendsLibrary/:id',
+            templateUrl: '../friendsLibrary/friendsLibrary.html',
+            controller: 'friendsLibraryCtrl'
           });
 
       $urlRouterProvider

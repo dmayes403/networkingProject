@@ -5,7 +5,7 @@ angular.module('networkingApp')
       //   userServ.createUser(firstName, lastName, age, gender, city, state, username, password);
       // }
 
-      
+
       $scope.createUser = function(firstName, lastName, age, gender, city, state, username, password){
         userServ.createUser(firstName, lastName, age, gender, city, state, username, password);
       }

@@ -10,6 +10,13 @@
       <p> City: {{userLanding.city}} </p>
       <p>State: {{userLanding.state}}</p>
     </div>
+    <div class="searchFriends">
+      <a ui-sref="friendsLibrary({id:userLanding.id})">Search New Friends</a>
+    </div>
+  </section>
+
+  <section class="myFriends">
+    <img ng-src="{{friend.headShot}}" ng-repeat="friend in userLanding.friends">
   </section>
 
   <section class="commentContainer">
@@ -19,8 +26,10 @@
   </section>
 
   <section class="commentThread">
+    <h1>Comments</h1>
     <p class="singleComment" ng-repeat="comment in userLanding.comments">
       {{comment}}
     </p>
   </section>
+
 </section>
