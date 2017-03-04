@@ -119,3 +119,8 @@ body {
   padding-top: 3px;
   text-decoration: none;
 }
+
+.submit:active {
+  background: white;
+  /*color: #dfdfdf;*/
+}

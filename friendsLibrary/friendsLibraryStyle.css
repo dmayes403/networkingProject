@@ -51,6 +51,10 @@
   right: 20px;
 }
 
+.addFriend:active {
+  background: #dfdfdf
+}
+
 a {
   color: white;
 }

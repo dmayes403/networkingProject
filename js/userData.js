@@ -173,6 +173,8 @@ angular.module('networkingApp')
         },
       ];
 
+      localStorage.setItem(1, JSON.stringify(userData))
+
       this.getUserData = function(){
         // return userData;
         return JSON.parse(localStorage.getItem(1));
@@ -188,22 +190,32 @@ angular.module('networkingApp')
 
       // login function /////////////////
 
-      this.checkCredentials = function(user, pass){
-        var currentUserData = JSON.parse(localStorage.getItem(1));
-        for(var i = 0;i < currentUserData.length; i++){
-          if(currentUserData[i].username === user && currentUserData[i].password === pass){
-            return currentUserData[i].id;
-          } else {
-            console.log('no match');
+      /// use arr.find()
+      // this.checkCredentials = function(user, pass){
+      //   var currentUserData = JSON.parse(localStorage.getItem(1));
+      //   for(var i = 0;i < currentUserData.length; i++){
+      //     if(currentUserData[i].username === user && currentUserData[i].password === pass){
+      //       return currentUserData[i].id;
+      //     } else {
+      //       console.log('no match');
+      //     }
+      //   }
+      // };
+
+      this.checkCredentials = function(username, pass){
+
+          return JSON.parse(localStorage.getItem(1)).find(function(user){
+            console.log(user)
+              return user.username === username && user.password === pass
+            });
           }
-        }
-      };
 
       // add a comment function ///////////
 
+
+      // arr.map()
       this.addComment = function(id, comment){
         var currentUserData = JSON.parse(localStorage.getItem(1));
-        console.log(currentUserData);
         for(var i = 0; i < currentUserData.length; i++){
           if(currentUserData[i].id === id){
             currentUserData[i].comments.unshift(comment);
@@ -212,6 +224,18 @@ angular.module('networkingApp')
         }
         return currentUserData;
       }
+
+
+      this.addComment = function(id, comment){
+        const currentUserData = JSON.parse(localStorage.getItem(1)).map(function(user){
+          if (user.id === id) {
+            user.comments.unshift(comment);
+            }
+            return user;
+        });
+        localStorage.setItem(1, JSON.stringify(currentUserData));
+            return currentUserData;
+        }
 
       // new user constructor  & function ////////////
 
@@ -233,14 +257,12 @@ angular.module('networkingApp')
       this.createUser = function(firstName, lastName, age, gender, city, state, username, password){
         if(firstName && lastName && age && gender && city && state && username && password){
           var currentUserData = JSON.parse(localStorage.getItem(1));
-          console.log(currentUserData);
           currentUserData.unshift(new newUser(firstName, lastName, age, gender, city, state, username, password));
           newId++;
           localStorage.setItem(1, JSON.stringify(currentUserData));
-          console.log(currentUserData);
           return currentUserData;
         } else {
-          console.log('theres still blanks!');
+          console.log('there are still blanks!');
         }
       }
 
@@ -252,9 +274,7 @@ angular.module('networkingApp')
           if(currentUserData[i].id === +myId){
             for(var g = 0; g < currentUserData.length; g++){
               if(currentUserData[g].id === friendId){
-                console.log(currentUserData);
                 currentUserData[i].friends.unshift(currentUserData[g]);
-                console.log(currentUserData)
                 localStorage.setItem(1, JSON.stringify(currentUserData));
                 return currentUserData;
               }

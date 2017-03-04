@@ -6,5 +6,6 @@ angular.module('networkingApp')
         $scope.addComment = function(id, comment){
           userServ.addComment(id, comment);
           $scope.userLanding = userServ.getUser($stateParams.id);
+          $scope.newComment = ''
         }
     })
