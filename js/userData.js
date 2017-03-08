@@ -252,6 +252,7 @@ angular.module('networkingApp')
         this.username = username;
         this.password = password;
         this.comments = [];
+        this.friends = [];
       };
 
       this.createUser = function(firstName, lastName, age, gender, city, state, username, password){
