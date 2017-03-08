@@ -173,6 +173,20 @@ angular.module('networkingApp')
         },
       ];
 
+      var thumbnails = [
+        "https://cdn.pixabay.com/photo/2015/12/09/04/27/a-single-person-1084191_960_720.jpg",
+        "https://cdn.pixabay.com/photo/2015/12/19/21/03/person-1100286_960_720.jpg",
+        "https://www.occrp.org/images/stories/CCWatch/16147_2.jpg",
+        "http://www.guinnessworldrecords.com/Images/Oldest-living-person-header_tcm25-453043.jpg",
+        "http://media.npr.org/assets/img/2015/07/17/ap_521396176256_sq-6ba01349f4b66a302d1eecda608a5d118abe0a0a-s300-c85.jpg",
+        "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTG5hhtSW8dRsjoTa7lwLcxl9tmRg8ezS5LLy_2lLshC7_C0QnoLw",
+        "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRmyxYaAvHNsmJlTpGc_TyeGXG_D2J3zZ-UWHdcmLjik-UncXQV",
+        "http://b-i.forbesimg.com/bruceupbin/files/2013/03/Chris.jpg",
+        "http://tribzap2it.files.wordpress.com/2014/11/sarah-shahi-person-of-interest-season-4-cbs.jpg",
+        "http://tribzap2it.files.wordpress.com/2013/05/sarah-shahi-person-of-interest-series-regular-gi.jpg",
+        "http://media3.popsugar-assets.com/files/2014/02/25/787/n/1922398/08b5b280523faef9_thumb_temp_image10906271393350668/i/Sarah-Shahi-Talks-Season-Three-Person-Interest.jpg"
+      ]
+
       localStorage.setItem(1, JSON.stringify(userData))
 
       this.getUserData = function(){
@@ -242,7 +256,9 @@ angular.module('networkingApp')
       var newId = 11;
 
       var newUser = function(firstName, lastName, age, gender, city, state, username, password){
+        var rando = Math.floor(Math.random() * 11);
         this.id = newId;
+        this.headShot = thumbnails[rando];
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
